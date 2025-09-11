@@ -9,7 +9,6 @@ public class UserService(IUserRepository userRepository) : IUserService
 {
     public async Task<User?> GetUserAsync(string name, GetUserFieldMask fieldMask, CancellationToken cancellationToken) 
     {
-        var u = await userRepository.FindByNameAsync(name, fieldMask, cancellationToken);
         return await userRepository.FindByNameAsync(name, fieldMask, cancellationToken);
     }
 }
